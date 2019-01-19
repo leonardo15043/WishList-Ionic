@@ -10,6 +10,8 @@ import { TerminadosPages } from '../pages/terminados/terminados.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DeseosService } from '../services/deseos.services';
+
 
 
 
@@ -34,6 +36,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    DeseosService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
