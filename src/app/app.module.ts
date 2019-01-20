@@ -14,6 +14,9 @@ import { DeseosService } from '../services/deseos.services';
 import { AgregarPage } from '../pages/agregar/agregar.component';
 
 
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
+
+
 
 
 @NgModule({
@@ -22,7 +25,8 @@ import { AgregarPage } from '../pages/agregar/agregar.component';
     TabsPage,
     PendientesPages,
     TerminadosPages,
-    AgregarPage
+    AgregarPage,
+    FiltroCompletadoPipe
   ],
   imports: [
     BrowserModule,
