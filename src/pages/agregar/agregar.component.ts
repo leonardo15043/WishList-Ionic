@@ -17,9 +17,15 @@ export class AgregarPage {
     private navParams: NavParams
   ) {
     const titulo = this.navParams.get('titulo');
-    this.lista = new Lista( titulo );
 
-    this.deseosService.agregarLista( this.lista );
+    if(this.navParams.get('lista')){
+      this.lista = this.navParams.get('lista');
+    }else{
+      this.lista = new Lista( titulo );
+      this.deseosService.agregarLista( this.lista );
+    }
+
+
 
   }
 
@@ -36,14 +42,32 @@ export class AgregarPage {
 
     const nuevoItem = new ListaItem(this.nombreItem);
     this.lista.items.push(nuevoItem);
+    this.deseosService.guardarStorage();
     this.nombreItem = '';
   }
 
   actualizarTarea( item: ListaItem ){
     item.completado = !item.completado;
+
+    //retorna el numero de items terminados
+    const pendientes = this.lista.items.filter(
+      itemData =>{
+        return !itemData.completado;
+    }).length;
+
+    if(pendientes === 0){
+      this.lista.terminada = true;
+      this.lista.terminadoEn = new Date();
+    }else{
+      this.lista.terminada = false;
+      this.lista.terminadoEn = null;
+    }
+
+    this.deseosService.guardarStorage();
   }
 
   borrar( idx: number ){
     this.lista.items.splice(idx , 1);
+    this.deseosService.guardarStorage();
   }
 }
