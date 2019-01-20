@@ -12,11 +12,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DeseosService } from '../services/deseos.services';
 import { AgregarPage } from '../pages/agregar/agregar.component';
+import { ListasComponent } from '../components/listas.component';
 
 
 import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
-
-
 
 
 @NgModule({
@@ -26,7 +25,8 @@ import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completa
     PendientesPages,
     TerminadosPages,
     AgregarPage,
-    FiltroCompletadoPipe
+    FiltroCompletadoPipe,
+    ListasComponent
   ],
   imports: [
     BrowserModule,

@@ -15,18 +15,7 @@ export class PendientesPages  {
     private alertCtr: AlertController
   ) {  }
 
-  listaSeleccionada(lista: Lista){
 
-        this.navCtr.push( AgregarPage , {
-          titulo: lista.titulo,
-          lista: lista
-        });
-
-  }
-
-  borrarLista( lista: Lista ){
-    this.deseosService.borrarLista( lista );
-  }
 
   agregarLista(){
 
