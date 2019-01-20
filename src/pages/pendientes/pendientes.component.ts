@@ -24,8 +24,11 @@ export class PendientesPages  {
 
   }
 
-  agregarLista(){
+  borrarLista( lista: Lista ){
+    this.deseosService.borrarLista( lista );
+  }
 
+  agregarLista(){
 
     const alerta = this.alertCtr.create({
       title: "Nueva lista",
